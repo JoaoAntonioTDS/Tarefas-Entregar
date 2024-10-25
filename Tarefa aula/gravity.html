@@ -1,0 +1,36 @@
+<style>
+    #personagem {
+    width: 200px;
+    cursor: pointer;
+    }
+    #mensagem {
+    margin-top: 20px; 
+    font-size: 18px; 
+    color: #333; 
+    }
+    </style>
+    </head>
+    <body>
+    
+    <img id="personagem" src="https://i.pinimg.com/474x/be/d0/d8/bed0d845f3ec967dab5f195c245ce2e1.jpg">
+    <div id="mensagem"></div>
+    
+    <script>
+    const personagem = document.getElementById("personagem");
+    const mensagem = document.getElementById("mensagem");
+    
+    personagem.addEventListener("mouseenter", function() {
+    mensagem.innerHTML = "Oi eu sou ruiva"; 
+    });
+    personagem.addEventListener("mouseleave", function() {
+    mensagem.innerHTML = "Adeus"; 
+    });
+    
+    personagem.addEventListener("mousemove", function() {
+    mensagem.innerHTML = "Eu sou sigma"; 
+    });
+    
+    personagem.addEventListener("click", function() {
+    mensagem.innerHTML = "Vamos moggar juntos";
+    });
+    </script>

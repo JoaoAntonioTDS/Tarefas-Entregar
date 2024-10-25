@@ -1,0 +1,17 @@
+<ul id="Lista">
+    <li>Item 1</li>
+    </ul>
+    <button id="botao">Adicionar Item</button>
+    
+    <script>
+    contador = 1
+    document.getElementById("botao").onclick = function() {
+    contador++;
+    AdcionarItem = document.createElement("li");
+    AdcionarItem.innerHTML = "Item " + contador; 
+    document.getElementById("Lista").appendChild(AdcionarItem); 
+    };
+    </script>
+    
+    //EU JUNTEI O QUE EU USEI PRA FAZER O CONTADOR E FIZ UM CONTADOR ACLOPADO COM O ITEM
+    

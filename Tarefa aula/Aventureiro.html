@@ -1,0 +1,18 @@
+<button id="botao">Gerar Nome</button>
+<p id="resultado"></p>
+
+<script>
+const cargos = ["Sr.", "Mister", "Dom", "Lord", "Lady", "Capitão", "Dama"];
+const nomes = ["Arthur", "Gwendolyn", "Merlin", "Lancelot", "Morgana", "Ragnar", "Éowyn"];
+const classes = ["Mago", "Paladino", "Arqueiro", "Ladino", "Bárbaro", "Feiticeiro", "Cavaleiro"];
+const lugares = ["Valfenda", "Gondor", "Asgard", "Camelot", "Nárnia", "Babilônia", "Atlantis"];
+
+document.getElementById("botao").onclick = function() {
+const cargo = cargos[Math.floor(Math.random() * cargos.length)];
+const nome = nomes[Math.floor(Math.random() * nomes.length)];
+const className = classes[Math.floor(Math.random() * classes.length)];
+const lugar = lugares[Math.floor(Math.random() * lugares.length)];
+const nomeAventureiro = `${cargo} ${nome}, o ${className} de ${lugar}`;
+document.getElementById("resultado").innerHTML = nomeAventureiro;
+};
+</script>

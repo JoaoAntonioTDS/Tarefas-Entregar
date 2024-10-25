@@ -1,0 +1,15 @@
+<h1 id="Titulo">Texto Original</h1>
+<button onclick="modificarH1()">Modificar H1</button>
+
+<script>
+
+function modificarH1() {
+h1 = document.getElementById("Titulo");
+
+h1.style.color = "blue";
+
+h1.style.fontSize = "36px";
+
+h1.innerHTML = "Texto Modificado!";
+}
+</script>

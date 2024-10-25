@@ -1,0 +1,10 @@
+<p id="contador">0</p> 
+<button id="botao">Clique aqui</button>
+
+<script>
+contador = 0; 
+document.getElementById("botao").onclick = function() {
+contador++;
+document.getElementById("contador").innerHTML = contador;
+};
+</script>
