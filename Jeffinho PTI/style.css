@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Ubuntu, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1320px;
+    margin: auto;
+}
+
+/* Cabeçalho */
+.topo {
+    height: 120px;
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+}
+
+.topo .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topo .logoSecao img {
+    max-width: 165px;
+}
+
+.navMenu ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+
+.navMenu ul li a {
+    color: #fff;
+    background-color: #888;
+    border-radius: 20px;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navMenu ul li a:hover {
+    color: #333;
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* Banner */
+.principalBanner img {
+    width: 100%;
+}
+
+/* Seção de Notícias */
+.secaoNoticias {
+    background: linear-gradient(180deg, #002850 0%, #000425 100%);
+    padding: 40px 0;
+}
+
+.secaoNoticias h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.noticiasGrid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.noticia {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-basis: 48%;
+    border: 1px solid #006bbd;
+}
+
+.imgWrapper {
+    position: relative;
+    height: 200px;
+}
+
+.imgWrapper img {
+    width: 100%;
+    transition: transform 0.4s;
+}
+
+.imgWrapper:hover img {
+    transform: scale(1.1);
+}
+
+.data {
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    background: #002850;
+    color: #50c4ff;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.descricaoNoticia {
+    padding: 15px;
+    color: #003360;
+    font-size: 16px;
+}
+
+.botaoMais {
+    display: block;
+    text-align: right;
+    padding: 5px 15px;
+    color: #007ac2;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.botaoMais:hover {
+    color: #003360;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+}
+
+/* Rodapé */
+.rodapeSite {
+    background: linear-gradient(180deg, #002850 0%, #000425 100%);
+    padding: 30px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.rodapeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoRodape img {
+    max-width: 150px;
+}
+
+.redesSociais {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.redesSociais li {
+    color: #0082c4;
+    font-size: 20px;
+}
+
+.redesSociais li:hover {
+    color: #003360;
+    cursor: pointer;
+    transition: 0.2s;
+}
