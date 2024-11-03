@@ -1,169 +1,426 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    font-family: Ubuntu, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu;
+    /* font-weight: 450; */
 }
 
-body {
+.site {
     display: flex;
     flex-direction: column;
 }
 
-.container {
+.conteudo {
     width: 1320px;
-    margin: auto;
+    margin: 0 auto;
+    /* border: dotted 2px #fbff00; */
 }
 
-/* Cabeçalho */
-.topo {
+/* CABEÇALHO */
+
+.cabecalho {
+    /* background-color: aqua; */
     height: 120px;
-    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #DBDBDB 100%);
 }
 
-.topo .container {
+.cabecalho .conteudo {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.topo .logoSecao img {
+.cabecalho .conteudo .logo {
     max-width: 165px;
 }
 
-.navMenu ul {
+.cabecalho .conteudo .menus ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    gap: 12px;
-}
+    gap: 10px;
+    font-weight: 100;
+    scale: 0.9;
+} 
 
-.navMenu ul li a {
-    color: #fff;
-    background-color: #888;
-    border-radius: 20px;
-    padding: 8px 12px;
+.cabecalho .conteudo .menus ul li:not(:nth-child(1)):not(:nth-child(7)) a{
     text-decoration: none;
-    font-size: 16px;
-}
-
-.navMenu ul li a:hover {
-    color: #333;
-    background-color: #f1f1f1;
-    transition: 0.3s;
-}
-
-/* Banner */
-.principalBanner img {
-    width: 100%;
-}
-
-/* Seção de Notícias */
-.secaoNoticias {
-    background: linear-gradient(180deg, #002850 0%, #000425 100%);
-    padding: 40px 0;
-}
-
-.secaoNoticias h2 {
     color: #fff;
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 30px;
-}
-
-.noticiasGrid {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    
+    align-items: center;
+    background-color: #9b9b9b;
+    padding: 8px;
+    border-radius: 100px;
+    font-size: 18px;
+    line-height: 18px;
 }
 
-.noticia {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-basis: 48%;
-    border: 1px solid #006bbd;
+.cabecalho .conteudo .menus ul li:not(:nth-child(1)):not(:nth-child(6)):not(:nth-child(7)) a{
+    transition: all 0.4s ease-out;
 }
 
-.imgWrapper {
-    position: relative;
-    height: 200px;
+.cabecalho .conteudo .menus ul li:not(:nth-child(1)):not(:nth-child(6)):not(:nth-child(7)) a:hover{
+    color: #9b9b9b;
+    background-color: transparent;
+    transform: scale(1.3);
+    margin: -4px 3px 3px 3px;
 }
 
-.imgWrapper img {
-    width: 100%;
-    transition: transform 0.4s;
+.cabecalho .conteudo .menus ul li:nth-child(6) a{
+    transition: all 0.2s ease-out;
+    margin-left: 30px;
 }
 
-.imgWrapper:hover img {
-    transform: scale(1.1);
+.cabecalho .conteudo .menus ul li:nth-child(6) a:hover{
+    background-color: transparent;
+    color: #9b9b9b;
 }
 
-.data {
-    position: absolute;
-    top: 170px;
-    width: 100%;
-    background: #002850;
-    color: #50c4ff;
-    text-align: center;
+
+.cabecalho .conteudo .menus ul li:nth-child(7) a{
+    margin-left: 30px;
+    /* margin-right: 30px; */
+    display: flex;
+    transition: all 0.4s ease-out;
+    color: #fff;
+    border-radius: 100px;
+    border: #0082c4 solid 1px;
+    text-decoration: none;
+    padding: 8px;
+    background-image: linear-gradient(180deg, #0082c4 0%, #003c6a 100%);
+}
+
+.cabecalho .conteudo .menus ul li:nth-child(7) a:hover {
+    color: #0082c4;
+    background-image: none;
+}
+
+.bi-search {
+    display: inline;
     padding: 5px;
-    font-size: 0.9em;
-}
-
-.descricaoNoticia {
-    padding: 15px;
-    color: #003360;
-    font-size: 16px;
-}
-
-.botaoMais {
-    display: block;
-    text-align: right;
-    padding: 5px 15px;
-    color: #007ac2;
-    font-weight: 300;
-    text-decoration: none;
-}
-
-.botaoMais:hover {
-    color: #003360;
-    background-color: #f0f0f0;
-    border-radius: 15px;
-}
-
-/* Rodapé */
-.rodapeSite {
-    background: linear-gradient(180deg, #002850 0%, #000425 100%);
-    padding: 30px 0;
-    color: #fff;
+    display: inline-block;
+    margin: 3px 30px;
+    background-color: #E4E4E4;
+    border: 2px solid #9B9B9B;
+    border-radius: 150px;
+    font-size: 18px;
+    height: 30px;
+    line-height: 18px;
     text-align: center;
+    color: #9B9B9B;
+    cursor: pointer;
+    /* z-index: 2; */
 }
 
-.rodapeContainer {
+/* MENU */
+
+.menu {
+    height: 60px;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #DBDBDB 100%);
+
     display: flex;
-    flex-direction: column;
+}
+
+.menu .conteudo {
+    display: flex;
     align-items: center;
 }
 
-.logoRodape img {
-    max-width: 150px;
-}
-
-.redesSociais {
-    list-style: none;
+.menu ul {
+    flex-basis: 100%;
     display: flex;
-    gap: 10px;
-    margin: 15px 0;
+    list-style: none;
+    justify-content: space-around;
 }
 
-.redesSociais li {
+.menu ul li a{
+    text-decoration: none;
+    color: #003C6A;
+    font-weight: 450;
+    padding: 20px;
+}
+
+.menu ul li a:hover{
+    text-decoration: none;
+    background-color: #FFFFFF;
+    /* border-radius: 3px; */
     color: #0082c4;
-    font-size: 20px;
 }
 
-.redesSociais li:hover {
-    color: #003360;
-    cursor: pointer;
-    transition: 0.2s;
+/* BANNER */
+
+.banner img {
+    width: 100%;
+    display: flex;
 }
+
+/* NOTICIAS & COMPETENCIAS */
+
+.noticias-competencias {
+    background-image: linear-gradient(180deg, #00315E 0%, #000825 100%);
+}
+
+.noticias-competencias h2{
+    color: #fff;
+    font-weight: 500;
+    margin-top: 80px;
+    font-size: 28px;
+}
+
+/* NOTICIAS */
+
+.conteudo-noticias {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CARD NOTICIAS*/
+
+.card-noticias {
+    flex-basis: 24%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #005CAAC7;
+}
+
+.card-noticias .card-noticias-data {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    position: absolute;
+    top: 190px;
+    width: 100%;
+    background-color: #00315ed3;
+    color: #50c4ff;
+    font-weight: 400;
+    transition: all 0.2s ease-out;
+}
+
+.card-noticias .card-noticias-imagem:hover .card-noticias-data {
+    top: 220px;
+}
+
+.card-noticias .card-noticias-imagem {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-noticias .card-noticias-imagem img{
+    width: 100%;
+    transition: all 0.4s ease-out;
+}
+
+.card-noticias .card-noticias-imagem:hover img{
+    transform: scale(1.1);
+}
+
+.card-noticias-texto {
+    color: #003C6A;
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 22px;
+    padding: 15px;
+}
+
+.card-noticias .dif {
+    margin-top: 20px;
+}
+
+.card-noticias .leia-mais .btn {
+    background-color: #EBEBEB;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #0082c4;
+    font-style: italic;
+    font-weight: 200;
+    float: right;
+    margin-right: 20px;
+}
+
+.card-noticias .leia-mais .btn:hover {
+    color: #ffffff;
+    background-color: #0082c4;
+}
+
+.textinho {
+    padding: 20px 7px 0px 0px;
+    float: right;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* COMPETENCIAS */
+
+.c {
+    padding-bottom: 16px;
+}
+
+.conteudo-competencias {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 8px; */
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    align-items: stretch;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+/* CARD COMPETENCIA */
+
+.card-comp {
+    border-radius: 10px;
+    border: solid #005CAAC7 1px;
+    overflow: hidden;
+    /* height: 300px; */
+    width: 400px;
+}
+
+.card-comp .card-comp-img {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+
+.card-comp .card-comp-img img{
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    /* height: 300px; */
+    transition: all 1.2s;
+}
+
+.card-comp .card-comp-img img:hover {
+    overflow: hidden;
+    scale: 1.3;
+    cursor: pointer;
+}
+
+.card-comp .card-comp-text {
+    color: #fff;
+    position: absolute;
+    top: 190px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    line-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Rodape {
+    background-image: linear-gradient(180deg, #00315E 0%, #000825 100%);
+  }
+  
+  .Rodape .CoisasRodape {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 60px;
+    align-items: flex-end;
+    gap: 300px;
+    color: #fff;
+    flex-direction: row;
+    line-height: 20px;
+   
+    
+  }
+  
+  .Rodape img {
+    margin-left: 250px;
+    width: 200px;
+   
+    height: 110px;
+    
+   
+  }
+  
+  .Rodape .CoisasRodape .RedesSociais {
+    width: 30%;
+  }
+  
+  .Rodape .CoisasRodape .RedesSociais ul.MeiosContato {
+    list-style: none;
+  }
+  
+  .Rodape .CoisasRodape .RedesSociais ul.MeiosContato li:nth-child(5) {
+   
+    border: #006EA9 2px solid;
+    margin-top: 40px;
+    padding: 10px;
+    background-image: linear-gradient(180deg, #007CBD 0%, #004879 100%);
+    transition: all 0.5s ease-out;
+    border-radius: 80px;
+ 
+  }
+  
+  .Rodape .CoisasRodape .RedesSociais ul.MeiosContato li:nth-child(5):hover {
+    color: #007CBD;
+    background-image: none;
+    cursor: pointer;
+   
+  }
+  
+  .RedesSociais .Logo {
+   
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .RedesSociais .Logo li a {
+   
+    padding: 10px;
+    transition: all 0.5s ease-out;
+    margin-bottom: 10px;
+    color: #002147;
+    border: #0078B8 solid 1px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #0078B8;
+    border-radius: 100px;
+    line-height: 20px;
+    
+  }
+  
+  .RedesSociais .Logo li a:hover {
+    color: #0078B8;
+    background-color: #00214700;
+  }
+  
+  .Rodape .InforIF {
+    width: 30%;
+  }
+  
+  .Rodape .InforIF ul li {
+    text-align-last: right;
+    transition: all 0.5s ease-out;
+    list-style: none;
+    
+  }
+  
+  .Rodape .InforIF ul li:hover {
+    color: #006EA9;
+    cursor: pointer;
+  }
