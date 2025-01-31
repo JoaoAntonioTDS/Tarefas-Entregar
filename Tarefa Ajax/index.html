@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFind Cinema</title>
+</head>
+<body>
+    
+    <div>
+        <h1>IFind Cinema</h1>
+        <input type="text" id="filmTitle" placeholder="Digite o nome do filme:">
+        <button id="btnSearch">Buscar</button>
+
+        <h2>Lista de filmes encontrados</h2>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function fetchMovie(filmTitle) {
+            const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=2dbca7a779fef19d8dc0acc77384df5a&query=${filmTitle}&language=pt-BR`;
+
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length > 0) {
+                        const film = data.results[0];
+
+                        document.getElementById('output').innerHTML +=
+                            `
+                            <h2>${film.title}</h2>
+                            <p>${film.overview}</p>
+                            <img src="https://image.tmdb.org/t/p/w200${film.poster_path}" alt="${film.title}">
+                            `;
+                    } else {
+                        document.getElementById('output').innerHTML += '<p>Filme não encontrado!</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+
+        const searchButton = document.getElementById('btnSearch');
+        
+        searchButton.addEventListener('click', () => {
+            const searchQuery = document.getElementById('filmTitle').value;
+            document.getElementById('output').innerHTML = ''; 
+            fetchMovie(searchQuery);
+        });
+    </script>
+</body>
+</html>
