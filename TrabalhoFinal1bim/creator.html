@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>PageMaker</title>
+   <script src="funcoes.js"></script>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f8f9fa;
+         margin: 0;
+         padding: 0;
+      }
+
+      h1 {
+         text-align: center;
+         color: #444;
+         font-size: 24px;
+         margin-bottom: 10px;
+      }
+
+      select, input {
+         display: block;
+         margin: 10px auto;
+         padding: 8px;
+         width: 80%;
+         max-width: 350px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      button {
+         display: block;
+         margin: 20px auto;
+         padding: 12px 24px;
+         background-color: #007BFF;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+      }
+
+      textarea {
+         width: 90%;
+         margin: 10px auto;
+         display: block;
+         font-family: monospace;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         padding: 10px;
+         background-color: #fff;
+      }
+
+      .container {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      .content {
+         width: 100%;
+         max-width: 800px;
+         margin: 20px auto;
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      iframe {
+         width: 100%;
+         height: 500px;
+         border: 1px solid #ccc;
+         border-radius: 10px;
+         margin-top: 10px;
+      }
+
+      .hidden {
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <!-- FORMULÁRIO DE CONFIGURAÇÃO -->
+      <div id="containerForma" class="content">
+         <h1>Arquivo HTML</h1>
+         Nome do arquivo HTML
+         <input type="text" id="nomeHTML" name="nomeHTML"><br>
+
+         <h1>Cabecalho</h1>
+         Cor de fundo
+         <select id="corFundo" name="corFundo">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+         </select><br>
+         Texto para cabeçalho
+         <input type="text" id="textoCabecalho" name="textoCabecalho"><br>
+         Cor da Fonte
+         <select id="corFonte" name="corFonte">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+         </select><br>
+         Tamanho Fonte
+         <select id="tamFonte" name="tamFonte">
+            <option>--</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+         </select><br>
+
+         <h1>Links</h1>
+         Texto para os links<br>
+         <input type="text" name="links" placeholder="link1">
+         <input type="file" name="href">
+         <button onclick="criarLinks()">+</button>
+
+         <!-- Aqui os novos campos aparecerão -->
+         <div id="areaLinks"></div>
+
+         Cor do link
+         <select id="corLinks" name="corLinks">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+         </select><br>
+         Estilo do link<br>
+         Sublinhado<input type="radio" name="estiloLinks" value="1"><br>
+         Não Sublinhado<input type="radio" name="estiloLinks" value="0"><br>
+
+         <h1>Mais Configurações</h1>
+         Cor do Hover dos Links
+         <select id="corHover" name="corHover">
+            <option>--</option>
+            <option value="#FF0000" style="background-color: #FF0000; color: white;">Vermelho</option>
+            <option value="#00FF00" style="background-color: #00FF00;">Verde</option>
+            <option value="#0000FF" style="background-color: #0000FF; color: white;">Azul</option>
+            <option value="#FFFF00" style="background-color: #FFFF00;">Amarelo</option>
+            <option value="#FFA500" style="background-color: #FFA500;">Laranja</option>
+            <option value="#800080" style="background-color: #800080; color: white;">Roxo</option>
+         </select><br>
+
+         Altura do Cabeçalho: <input type="number" id="alturaCabecalho"><br>
+         Largura do Cabeçalho: <input type="number" id="larguraCabecalho"><br>
+         Altura da área de Links: <input type="number" id="alturaLinks"><br>
+         Largura da área de Links: <input type="number" id="larguraLinks"><br>
+
+         Alinhamento do Cabeçalho<br>
+         <select id="alinhamentoTexto">
+            <option value="left">Esquerda</option>
+            <option value="center">Centro</option>
+            <option value="right">Direita</option>
+         </select><br>
+
+         <hr>
+         <button onclick="gerarCodigo()">Gerar código</button>
+      </div>
+
+      <!-- CONTEÚDO -->
+      <div class="content">
+         <h1>Conteúdo</h1><br>
+         <textarea id="txtConteudo" cols="50" rows="10"></textarea><br>
+         Imagem: <input type="file" id="imagem"><br>
+         Largura: <input type="number" id="largura">
+         Altura: <input type="number" id="altura">
+      </div>
+
+      <!-- CÓDIGOS HTML/CSS -->
+      <div id="containerCod" class="content">
+         <h1>HTML</h1>
+         <textarea cols="100" rows="30" id="codeHTML"></textarea><br>
+         <button onclick="download('codeHTML','')">Download do código</button>
+
+         <h1>CSS</h1>
+         <textarea id="codeCSS" cols="100" rows="30"></textarea><br>
+         <button onclick="download('codeCSS','estilo.css')">Download do código</button>
+      </div>
+
+      <!-- BOTÃO PARA PRÉ-VISUALIZAÇÃO -->
+      <button onclick="mostraOcultaDiv('containerPreview'); renderIframe()">Visualizar página</button>
+
+      <!-- PRÉ-VISUALIZAÇÃO -->
+      <div id="containerPreview" class="content hidden">
+         <h1>Pré-visualização</h1>
+         <iframe id="pagina"></iframe>
+      </div>
+   </div>
+</body>
+</html>
+
