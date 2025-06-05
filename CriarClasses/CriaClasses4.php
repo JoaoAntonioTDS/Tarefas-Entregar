@@ -29,34 +29,28 @@ class CriaClasses1 {
 
             foreach ($atributos as $atributo) {
                 $campo = $atributo->Field;
-                $camelCampo = ucfirst($campo);
+                $nomeMetodo = ucfirst($campo); // agora em português
 
                 $nomeAtributos .= "    private \${$campo};\n";
 
-                $getSet .= "    public function get{$camelCampo}() {\n";
+                $getSet .= "    public function get{$nomeMetodo}() {\n";
                 $getSet .= "        return \$this->{$campo};\n";
                 $getSet .= "    }\n\n";
 
-                $getSet .= "    public function set{$camelCampo}(\${$campo}) {\n";
+                $getSet .= "    public function set{$nomeMetodo}(\${$campo}) {\n";
                 $getSet .= "        \$this->{$campo} = \${$campo};\n";
                 $getSet .= "    }\n\n";
             }
-
             $nomeTabela = ucfirst($nomeTabela);
-
             $conteudo = <<<EOT
 <?php
 class {$nomeTabela} {
 {$nomeAtributos}
-
 {$getSet}}
 ?>
 EOT;
-
             file_put_contents("sistema/model/{$nomeTabela}.php", $conteudo);
-        }
-    }
-}
-
+        }}}
 (new CriaClasses1())->ClassesModel();
+
 
